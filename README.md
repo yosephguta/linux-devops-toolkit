@@ -27,3 +27,9 @@
 - Fixed networking by allowing HTTP (port 80) in AWS security group
 - Simulated outage and restored service
 - Viewed live web traffic in /var/log/nginx/access.log
+
+## Day 4 - Process and Logs
+    -Learned Linux filesystem structure. (/home, /etc, /var...)
+    -Utilized "tail -n, and tail -f" to view logs
+    -Used 'ps aux' and 'grep' to find running services. 
+    -monitored server activity using 'top' 
