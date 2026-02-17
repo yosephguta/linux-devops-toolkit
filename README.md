@@ -33,3 +33,8 @@
     -Utilized "tail -n, and tail -f" to view logs
     -Used 'ps aux' and 'grep' to find running services. 
     -monitored server activity using 'top' 
+
+## Day 5 - Replace Nginx with custom page
+    -Used sudo nana /var/www/html/index.html to directly change the contents of the home page. 
+    -Reloaded page after changes instead of restart to mitigate possible interruption in runtime. 
+    -Fetched contentents of the page using curl command to confirm changes. 
