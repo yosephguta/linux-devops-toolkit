@@ -38,3 +38,10 @@
     -Used sudo nana /var/www/html/index.html to directly change the contents of the home page. 
     -Reloaded page after changes instead of restart to mitigate possible interruption in runtime. 
     -Fetched contentents of the page using curl command to confirm changes. 
+
+# Day 6: Nginx virtial hosts
+    - Learned sites available vs sites enabled
+    - Created second site directory /var/www/day6
+    - Created site config
+    - Added another IPV4 address to server inbound rules. 
+    - Utilized nginx -t before reload to prevent downtime. 
