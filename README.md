@@ -14,11 +14,11 @@
 
 ## Day 2: Linux permissions and CHMOD
 
--Used chmod 400, 500, and 700 to change permissions on files
-    - 400 grants owner read only (safest, file can not be accidently over written)
-    - 600 grants owner read and write (common and secure default. Owner can edit key)
-    - 700 grants owner read, write, and execute (commonly used for directories)
-    - Implicit denial for everyone else above
+- Used chmod 400, 500, and 700 to change permissions on files
+- 400 grants owner read only (safest, file can not be accidently over written)
+- 600 grants owner read and write (common and secure default. Owner can edit key)
+- 700 grants owner read, write, and execute (commonly used for directories)
+- Implicit denial for everyone else above
 
 ## Day 3 – Running a Web Service
 
@@ -29,19 +29,26 @@
 - Viewed live web traffic in /var/log/nginx/access.log
 
 ## Day 4 - Process and Logs
-    -Learned Linux filesystem structure. (/home, /etc, /var...)
-    -Utilized "tail -n, and tail -f" to view logs
-    -Used 'ps aux' and 'grep' to find running services. 
-    -monitored server activity using 'top' 
+- Learned Linux filesystem structure. (/home, /etc, /var...)
+- Utilized "tail -n, and tail -f" to view logs
+- Used 'ps aux' and 'grep' to find running services. 
+- monitored server activity using 'top' 
 
 ## Day 5 - Replace Nginx with custom page
-    -Used sudo nana /var/www/html/index.html to directly change the contents of the home page. 
-    -Reloaded page after changes instead of restart to mitigate possible interruption in runtime. 
-    -Fetched contentents of the page using curl command to confirm changes. 
+- Used sudo nana /var/www/html/index.html to directly change the contents of the home page. 
+- Reloaded page after changes instead of restart to mitigate possible interruption in runtime. 
+- Fetched contentents of the page using curl command to confirm changes. 
 
 # Day 6: Nginx virtial hosts
-    - Learned sites available vs sites enabled
-    - Created second site directory /var/www/day6
-    - Created site config
-    - Added another IPV4 address to server inbound rules. 
-    - Utilized nginx -t before reload to prevent downtime. 
+- Learned sites available vs sites enabled
+- Created second site directory /var/www/day6
+- Created site config
+- Added another IPV4 address to server inbound rules. 
+- Utilized nginx -t before reload to prevent downtime. 
+# Day 7: Deploy Workflow + Permissions
+- Created a source directory ~/site-src/day6
+- Deployed to /var/www/day6/index.html
+- Set ownership to www-data so nginx workers can read site files
+- Set permissions to 755 (owner can write; others can read/enter)
+- Added set -e to stop deploy on failure
+- Verified default site vs day6 site using Host header
