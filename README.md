@@ -46,9 +46,10 @@
 - Added another IPV4 address to server inbound rules. 
 - Utilized nginx -t before reload to prevent downtime. 
 # Day 7: Deploy Workflow + Permissions
-- Created a source directory ~/site-src/day6
-- Deployed to /var/www/day6/index.html
+-Built a simple deploy flow: edit source in ~/site-src/day6/index.html, deploy to /var/www/day6/index.html 
 - Set ownership to www-data so nginx workers can read site files
 - Set permissions to 755 (owner can write; others can read/enter)
 - Added set -e to stop deploy on failure
 - Verified default site vs day6 site using Host header
+    - Default site: curl http://3.144.166.240
+    - Day6 site: curl -H "Host: day6.local" http://3.144.166.240
